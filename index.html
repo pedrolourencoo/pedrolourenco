@@ -19,10 +19,9 @@
       <a href="#">Pedro Lourenço</a>
     </div>
     <ul class="menu">
-      <li><a href="#home">Início</a></li>
+      <li><a href="#">Início</a></li>
       <li><a href="#sobre">Sobre Mim</a></li>
-      <li><a href="#servicos">Serviços</a></li>
-      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="projetos.html">Projetos</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
   </nav>
@@ -34,39 +33,67 @@
   </header>
 
   <section class="sobre" id="sobre">
-    <h2>Sobre mim</h2>
-    <p>Sou um desenvolvedor apaixonado por criar experiências digitais modernas e fluidas...</p>
-  </section>
-
-  <section class="skills">
-    <h2>As Minhas Skills</h2>
-    <div class="skills-container">
-      <div class="skill-item html">
-        <i class="fab fa-html5"></i>
-        <span>HTML</span>
+    <div class="sobre-container">
+      <div class="sobre-img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShcRw0ZeSaO-1PT_cAy2KizeHQlS8n88yLKA&s" alt="Foto de Pedro Lourenço" />
       </div>
-      <div class="skill-item css">
-        <i class="fab fa-css3-alt"></i>
-        <span>CSS</span>
-      </div>
-      <div class="skill-item js">
-        <i class="fab fa-js-square"></i>
-        <span>JavaScript</span>
-      </div>
-      <div class="skill-item cpp">
-        <i class="devicon-cplusplus-plain"></i>
-        <span>C++</span>
-      </div>
-      <div class="skill-item c">
-        <i class="devicon-c-plain"></i>
-        <span>C</span>
-      </div>
-      <div class="skill-item python">
-        <i class="devicon-python-plain"></i>
-        <span>Python</span>
+  
+      <div class="sobre-conteudo">
+        <h2>Sobre mim</h2>
+        <p>
+          Sou um desenvolvedor apaixonado por criar experiências digitais modernas e fluidas. Gosto de transformar ideias em soluções funcionais e criativas, com foco em performance e acessibilidade.
+        </p>
+  
+        <nav class="sobre-tabs">
+          <span onclick="mostrarConteudo('skills')" class="tab-link ativo">Skills</span>
+          <span onclick="mostrarConteudo('educacao')" class="tab-link">Educação</span>
+          <span onclick="mostrarConteudo('experiencia')" class="tab-link">Experiência</span>
+        </nav>
+  
+        <div class="conteudo-tabs">
+          <div id="skills" class="conteudo-tab ativo">
+            <h3>Skills</h3>
+            <div class="skills-container">
+              <div class="skill-item html">
+                <i class="fab fa-html5"></i>
+                <span>HTML</span>
+              </div>
+              <div class="skill-item css">
+                <i class="fab fa-css3-alt"></i>
+                <span>CSS</span>
+              </div>
+              <div class="skill-item js">
+                <i class="fab fa-js-square"></i>
+                <span>JavaScript</span>
+              </div>
+              <div class="skill-item cpp">
+                <i class="devicon-cplusplus-plain"></i>
+                <span>C++</span>
+              </div>
+              <div class="skill-item c">
+                <i class="devicon-c-plain"></i>
+                <span>C</span>
+              </div>
+              <div class="skill-item python">
+                <i class="devicon-python-plain"></i>
+                <span>Python</span>
+              </div>
+            </div>
+          </div>
+  
+          <div id="educacao" class="conteudo-tab">
+            <h3>Educação</h3>
+            <p>Licenciatura em Engenharia Informática pela Universidade X (2020 - 2023).</p>
+          </div>
+  
+          <div id="experiencia" class="conteudo-tab">
+            <h3>Experiência</h3>
+            <p>Web Developer freelancer com experiência em desenvolvimento de sites modernos, acessíveis e performantes para clientes e projetos pessoais.</p>
+          </div>
+        </div>
       </div>
     </div>
-  </section>  
+  </section>   
 
   <section class="projetos" id="projetos">
     <h2>Os Meus Projetos</h2>
@@ -78,13 +105,13 @@
           <p>Este portfólio foi desenvolvido utilizando HTML, CSS e JavaScript, com animações modernas e design responsivo.</p> <!-- Descrição do Projeto -->
         </div>
       </div>
-      <div class="projeto-card" style="background-image: url('https://cdn-0001.qstv.on.epicgames.com/DeWFZjGciBtKpknWZf/image/landscape_comp.jpeg');">
+      <div class="projeto-card" style="background-image: url('https://www.gov.br/agricultura/pt-br/assuntos/riscos-seguro/imagens/em_construao.png/@@images/image.png');">
         <div class="projeto-info">
           <h3>Projeto 2</h3>
           <p>Descrição breve do projeto 2. Ele é focado em design e experiência do usuário.</p>
         </div>
       </div>
-      <div class="projeto-card" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh6eOtRp-oAHrZ1T43d_HFKkmcBvQg6LWapw&s');">
+      <div class="projeto-card" style="background-image: url('https://www.gov.br/agricultura/pt-br/assuntos/riscos-seguro/imagens/em_construao.png/@@images/image.png');">
         <div class="projeto-info">
           <h3>Projeto 3</h3>
           <p>Descrição breve do projeto 3. Uma solução inovadora para um problema real do mercado.</p>
@@ -94,26 +121,32 @@
 
      <!-- Botão para visualizar mais projetos -->
   <div class="view-more-container">
-    <a href="#" class="view-more-btn">Ver Mais Projetos</a>
+    <a href="projetos.html" class="view-more-btn">Ver Todos os Projetos</a>
   </div>
   </section>  
 
   <!-- Seção de Contato -->
-<section class="contato" id="contato">
+  <section class="contato" id="contato">
     <div class="contato-left">
       <h2>Contacta-me!</h2>
       <div class="contact-info">
         <div class="contact-item">
           <img src="https://img.icons8.com/ios-filled/50/00ffcc/email.png" alt="Email Icon" class="contact-icon">
-          <span>pedrolou05@gmail.com</span>
+          <span>contacto@pedrolourenco.pt</span>
         </div>
         <div class="contact-item">
           <img src="https://img.icons8.com/ios-filled/50/00ffcc/iphone.png" alt="Phone Icon" class="contact-icon">
-          <span>+351 912345678</span>
+          <span>+351 926043609</span>
         </div>
         <div class="social-icons">
           <a href="https://www.linkedin.com" target="_blank">
             <img src="https://img.icons8.com/ios-filled/50/00ffcc/linkedin.png" alt="LinkedIn">
+          </a>
+          <a href="https://github.com/pedrolourencoo" target="_blank">
+            <img src="https://img.icons8.com/ios-filled/50/00ffcc/github.png" alt="GitHub">
+          </a>
+          <a href="https://discord.com/users/1234567890" target="_blank">
+            <img src="https://img.icons8.com/ios-filled/50/00ffcc/discord.png" alt="Discord">
           </a>
           <a href="https://www.instagram.com" target="_blank">
             <img src="https://img.icons8.com/ios-filled/50/00ffcc/instagram-new.png" alt="Instagram">
@@ -129,24 +162,30 @@
         </div>
       </div>
     </div>
-  
+    
     <div class="contato-right">
       <h2>Formulário de Contato</h2>
-      <form action="#" method="POST">
-        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
-        <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
-        <textarea id="mensagem" name="mensagem" placeholder="Sua mensagem" rows="5" required></textarea>
+      <form action="enviar.php" method="POST">
+        <input type="text" id="nome" name="nome" placeholder="Nome" required>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <textarea id="mensagem" name="mensagem" placeholder="Mensagem" rows="5" required></textarea>
         <button type="submit">Enviar</button>
       </form>
     </div>
-  </section>
+  </section>  
 
   <footer class="footer">
     <div class="footer-content">
       <p>&copy; 2025 Pedro Lourenço | Todos os direitos reservados.</p>
       <div class="social-icons">
-        <a href="https://www.linkedin.com" target="_blank">
+        <a href="https://pt.linkedin.com/in/pedrolourenco5" target="_blank">
           <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/pedrolourencoo" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://discord.com/users/532902993436344351" target="_blank">
+          <i class="fab fa-discord"></i>
         </a>
         <a href="https://www.instagram.com" target="_blank">
           <i class="fab fa-instagram"></i>
@@ -154,12 +193,14 @@
         <a href="https://www.facebook.com" target="_blank">
           <i class="fab fa-facebook"></i>
         </a>
+
       </div>
     </div>
-  </footer>  
+  </footer>   
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
+
 </body>
 </html>
