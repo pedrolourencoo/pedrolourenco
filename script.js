@@ -27,7 +27,6 @@ gsap.utils.toArray("section").forEach((sec) => {
   });
 });
 
-// Função para mostrar conteúdo da aba (Tabs)
 function mostrarConteudo(id) {
   // Ativar conteúdo
   document.querySelectorAll('.conteudo-tab').forEach(tab => {
@@ -39,5 +38,13 @@ function mostrarConteudo(id) {
   document.querySelectorAll('.tab-link').forEach(link => {
     link.classList.remove('ativo');
   });
-  event.target.classList.add('ativo');
+
+  // Captura do evento com segurança
+  const trigger = event.currentTarget || event.target;
+  trigger.classList.add('ativo');
+}
+
+function toggleMenu() {
+  const menu = document.querySelector('.menu');
+  menu.classList.toggle('open');
 }
