@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Pedro Lourenço</title>
+  <link rel="icon" href="/assets/images/icon.png" type="image/png" />
+  <link rel="stylesheet" href="/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.14.0/devicon.min.css">
+</head>
+
+<body>
+  <!-- Menu -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/en/">Pedro Lourenço</a>
+    </div>
+
+    <div class="menu-icon" onclick="toggleMenu()">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
+    <ul class="menu">
+      <li><a href="/en/">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="/en/projects/">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li class="lang-selector">
+        <div class="current-lang" onclick="toggleDropdown()">
+          <img id="current-flag" src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="Current Language" style="width: 25px; cursor: pointer;" />
+        </div>
+        <div id="lang-dropdown" class="lang-dropdown">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg" alt="Portuguese" onclick="window.location.href='/'" />
+          <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="English" onclick="window.location.href='/en/'" />
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Sections -->
+  <header class="hero" id="home">
+    <h1 class="title">Hello, I'm <span>Pedro Lourenço</span></h1>
+    <p class="subtitle">Web Developer</p>
+  </header>
+
+  <section class="sobre" id="about">
+    <div class="sobre-container">
+      <div class="sobre-img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShcRw0ZeSaO-1PT_cAy2KizeHQlS8n88yLKA&s" alt="Photo of Pedro Lourenço" />
+      </div>
+
+      <div class="sobre-conteudo">
+        <h2>About Me</h2>
+        <p>
+        I am a developer passionate about technology and cybersecurity. I enjoy turning ideas into practical and creative digital solutions. With experience in various programming languages, I am always eager to learn and explore new technologies to solve real-world problems and deliver high-quality results.
+        </p>
+
+        <nav class="sobre-tabs">
+          <span onclick="mostrarConteudo('skills')" class="tab-link ativo">Skills</span>
+          <span onclick="mostrarConteudo('education')" class="tab-link">Education</span>
+          <span onclick="mostrarConteudo('experience')" class="tab-link">Experience</span>
+        </nav>
+
+        <div class="conteudo-tabs">
+          <div id="skills" class="conteudo-tab ativo">
+            <div class="skills-container">
+              <!-- Mantém os skills como estão, os ícones são universais -->
+              <div class="skill-item html"><i class="fab fa-html5"></i><span>HTML</span></div>
+              <div class="skill-item css"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
+              <div class="skill-item js"><i class="fab fa-js-square"></i><span>JavaScript</span></div>
+              <div class="skill-item cpp"><i class="devicon-cplusplus-plain"></i><span>C++</span></div>
+              <div class="skill-item c"><i class="devicon-c-plain"></i><span>C</span></div>
+              <div class="skill-item python"><i class="devicon-python-plain"></i><span>Python</span></div>
+            </div>
+          </div>
+
+          <div id="education" class="conteudo-tab">
+            <p><strong>2020 - 2023</strong><br>
+               Computer Systems Management and Programming Technician at Escola Secundária de Vendas Novas</p>
+            <p><strong>2024 - Present</strong><br>
+               Cybersecurity Specialist Technician at Centro de Formação Profissional de Évora</p>
+          </div>
+
+          <div id="experience" class="conteudo-tab">
+            <p><strong>05/2022 - 07/2022 / 05/2023 - 07/2023</strong><br>
+               Internship at Casa do Povo de Vendas Novas</p>
+            <p><strong>06/2022 - 09/2022</strong><br>
+               Waiter at Mercado das Bifanas</p>
+            <p><strong>03/2024 - 10/2024</strong><br>
+               Warehouse Operator at Lidl Marateca Logistics Center</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="projetos" id="projects">
+    <h2>My Projects</h2>
+    <div class="grid">
+      <div class="projeto-card" style="background-image: url('/assets/images/mockup1.png');">
+        <div class="projeto-info">
+          <h3>Personal Portfolio</h3>
+          <p>This portfolio was developed using HTML, CSS, and JavaScript, with modern animations and responsive design.</p>
+        </div>
+      </div>
+      <div class="projeto-card" style="background-image: url('https://www.gov.br/agricultura/pt-br/assuntos/riscos-seguro/imagens/em_construao.png/@@images/image.png');">
+        <div class="projeto-info">
+          <h3>Project 2</h3>
+          <p>Brief description of project 2. Focused on design and user experience.</p>
+        </div>
+      </div>
+      <div class="projeto-card" style="background-image: url('https://www.gov.br/agricultura/pt-br/assuntos/riscos-seguro/imagens/em_construao.png/@@images/image.png');">
+        <div class="projeto-info">
+          <h3>Project 3</h3>
+          <p>Brief description of project 3. An innovative solution for a real market problem.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="view-more-container">
+      <a href="/en/projects/" class="view-more-btn">View All Projects</a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contato" id="contact">
+    <div class="contato-left">
+      <h2>Contact Me!</h2>
+      <div class="contact-info">
+        <div class="contact-item">
+          <img src="https://img.icons8.com/ios-filled/50/00ffcc/email.png" alt="Email Icon" class="contact-icon">
+          <a href="mailto:contacto@pedrolourenco.pt" class="contact-link">contacto@pedrolourenco.pt</a>
+        </div>
+        <div class="contact-item">
+          <img src="https://img.icons8.com/ios-filled/50/00ffcc/iphone.png" alt="Phone Icon" class="contact-icon">
+          <a href="tel:+351926043609" class="contact-link">+351 926043609</a>
+        </div>
+        <div class="social-icons">
+          <a href="https://pt.linkedin.com/in/pedrolourenco5" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/pedrolourencoo" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://discord.com/users/532902993436344351" target="_blank"><i class="fab fa-discord"></i></a>
+          <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+        <div class="download-cv">
+          <a href="/assets/cv.pdf" download="CV_Pedro_Lourenço">
+            <button>
+              <i class="fas fa-file-pdf"></i> Download CV
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contato-right">
+      <h2>Contact Form</h2>
+      <form action="https://formsubmit.co/contacto@pedrolourenco.pt" method="POST">
+        <input type="text" id="nome" name="nome" placeholder="Name" required>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <textarea id="mensagem" name="mensagem" placeholder="Message" rows="5" required></textarea>
+        <button type="submit">
+          <i class="fas fa-envelope"></i> Send
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Pedro Lourenço | All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://pt.linkedin.com/in/pedrolourenco5" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/pedrolourencoo" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://discord.com/users/532902993436344351" target="_blank"><i class="fab fa-discord"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="/script.js"></script>
+</body>
+</html>

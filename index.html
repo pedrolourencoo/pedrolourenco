@@ -4,12 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfólio | Pedro Lourenço</title>
+  
+  <!-- Meta Tags para SEO -->
+  <meta name="description" content="Portfólio de Pedro Lourenço, Desenvolvedor Web e Especialista em Cibersegurança. Projetos, Skills, Contato e muito mais!">
+  <meta name="author" content="Pedro Lourenço">
+  <meta name="keywords" content="Pedro Lourenço, Portfólio, Web Developer, Cibersegurança, Programador, Projetos">
+  <meta property="og:title" content="Pedro Lourenço | Desenvolvedor Web">
+  <meta property="og:description" content="Conheça o portfólio de Pedro Lourenço, com projetos, skills e contato.">
+  <meta property="og:image" content="assets/images/icon.png">
+  <meta property="og:type" content="website">
+  <meta name="format-detection" content="telephone=no">
+
   <link rel="icon" href="assets/images/icon.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link href="https://kit.fontawesome.com/a076d05399.js" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.14.0/devicon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 
 <body>
@@ -19,18 +31,34 @@
       <a href="/">Pedro Lourenço</a>
     </div>
 
-  <!-- Ícone do menu (hamburger) -->
-  <div class="menu-icon" onclick="toggleMenu()">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </div>
+    <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>    
 
-    <ul class="menu">
-      <li><a href="/">Início</a></li>
-      <li><a href="#sobre">Sobre Mim</a></li>
-      <li><a href="projetos/">Projetos</a></li>
-      <li><a href="#contato">Contato</a></li>
+    <ul class="menu" id="menu">
+      <li><a href="/"><i class="fas fa-home"></i> Início</a></li>
+      <li><a href="#sobre"><i class="fas fa-user"></i> Sobre Mim</a></li>
+      <li><a href="projetos/"><i class="fas fa-project-diagram"></i> Projetos</a></li>
+      <li><a href="#contato"><i class="fas fa-envelope"></i> Contactos</a></li>
+      <li class="lang-selector">
+        <div class="current-lang" onclick="toggleDropdown()">
+          <img id="current-flag" src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg" alt="Current Language" style="width: 25px; cursor: pointer;" />
+          <span id="current-lang-text">Português</span>
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div id="lang-dropdown" class="lang-dropdown">
+          <div onclick="changeLanguage('pt')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg" alt="Portuguese" />
+            <span>Português</span>
+          </div>
+          <div onclick="changeLanguage('en')">
+            <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="English" />
+            <span>English</span>
+          </div>
+        </div>
+      </li>
     </ul>
   </nav>
 
@@ -45,77 +73,51 @@
       <div class="sobre-img">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShcRw0ZeSaO-1PT_cAy2KizeHQlS8n88yLKA&s" alt="Foto de Pedro Lourenço" />
       </div>
-  
+
       <div class="sobre-conteudo">
         <h2>Sobre mim</h2>
-        <p>
-        Sou um desenvolvedor apaixonado por tecnologia e cibersegurança. Gosto de transformar ideias em soluções digitais práticas e criativas. Com experiência em diversas linguagens de programação, busco sempre aprender e explorar novas tecnologias para resolver problemas reais e entregar resultados de qualidade.
-        </p>
-  
+        <p>Sou um desenvolvedor apaixonado por tecnologia e cibersegurança. Gosto de transformar ideias em soluções digitais práticas e criativas. Com experiência em diversas linguagens de programação, busco sempre aprender e explorar novas tecnologias para resolver problemas reais e entregar resultados de qualidade.</p>
+
         <nav class="sobre-tabs">
           <span onclick="mostrarConteudo('skills')" class="tab-link ativo">Skills</span>
           <span onclick="mostrarConteudo('educacao')" class="tab-link">Educação</span>
           <span onclick="mostrarConteudo('experiencia')" class="tab-link">Experiência</span>
         </nav>
-  
+
         <div class="conteudo-tabs">
           <div id="skills" class="conteudo-tab ativo">
             <div class="skills-container">
-              <div class="skill-item html">
-                <i class="fab fa-html5"></i>
-                <span>HTML</span>
-              </div>
-              <div class="skill-item css">
-                <i class="fab fa-css3-alt"></i>
-                <span>CSS</span>
-              </div>
-              <div class="skill-item js">
-                <i class="fab fa-js-square"></i>
-                <span>JavaScript</span>
-              </div>
-              <div class="skill-item cpp">
-                <i class="devicon-cplusplus-plain"></i>
-                <span>C++</span>
-              </div>
-              <div class="skill-item c">
-                <i class="devicon-c-plain"></i>
-                <span>C</span>
-              </div>
-              <div class="skill-item python">
-                <i class="devicon-python-plain"></i>
-                <span>Python</span>
-              </div>
+              <div class="skill-item html"><i class="fab fa-html5"></i><span>HTML</span></div>
+              <div class="skill-item css"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
+              <div class="skill-item js"><i class="fab fa-js-square"></i><span>JavaScript</span></div>
+              <div class="skill-item cpp"><i class="devicon-cplusplus-plain"></i><span>C++</span></div>
+              <div class="skill-item c"><i class="devicon-c-plain"></i><span>C</span></div>
+              <div class="skill-item python"><i class="devicon-python-plain"></i><span>Python</span></div>
             </div>
           </div>
-  
+
           <div id="educacao" class="conteudo-tab">
-            <p><strong>2020 - 2023</strong><br>
-               Técnico de Gestão e Programação de Sistemas Informáticos na Escola Secundária de Vendas Novas</p>
-            <p><strong>2024 - Atual</strong><br>
-               Técnico Especialista de Cibersegurança no Centro de Formação Profissional de Évora</p>
-          </div>          
-  
+            <p><strong>2020 - 2023</strong><br>Técnico de Gestão e Programação de Sistemas Informáticos na Escola Secundária de Vendas Novas</p>
+            <p><strong>2024 - Atual</strong><br>Técnico Especialista de Cibersegurança no Centro de Formação Profissional de Évora</p>
+          </div>
+
           <div id="experiencia" class="conteudo-tab">
-            <p><strong>05/2022 - 07/2022 / 05/2023 - 07/2023</strong><br>
-               Estágio Curricular na Casa do Povo de Vendas Novas</p>
-            <p><strong>06/2022 - 09/2022</strong><br>
-               Empregado de Mesa no Mercado das Bifanas</p>
-            <p><strong>03/2024 - 10/2024</strong><br>
-               Operador de Armazém no Entreposto Lidl Marateca</p>
+            <p><strong>05/2022 - 07/2022 / 05/2023 - 07/2023</strong><br>Estágio Curricular na Casa do Povo de Vendas Novas</p>
+            <p><strong>06/2022 - 09/2022</strong><br>Empregado de Mesa no Mercado das Bifanas</p>
+            <p><strong>03/2024 - 10/2024</strong><br>Operador de Armazém no Entreposto Lidl Marateca</p>
           </div>          
         </div>
       </div>
     </div>
-  </section>   
+  </section>
 
   <section class="projetos" id="projetos">
     <h2>Os Meus Projetos</h2>
     <div class="grid">
-      <!-- Substituindo o Projeto 1 -->
       <div class="projeto-card" style="background-image: url('assets/images/mockup1.png');">
         <div class="projeto-info">
-          <h3>Portfolio Pessoal</h3> <!-- Título do Projeto -->
-          <p>Este portfólio foi desenvolvido utilizando HTML, CSS e JavaScript, com animações modernas e design responsivo.</p> <!-- Descrição do Projeto -->
+          <h3>Portfolio Pessoal</h3>
+          <p>Este portfólio foi desenvolvido utilizando HTML, CSS e JavaScript, com animações modernas e design responsivo.</p>
         </div>
       </div>
       <div class="projeto-card" style="background-image: url('https://www.gov.br/agricultura/pt-br/assuntos/riscos-seguro/imagens/em_construao.png/@@images/image.png');">
@@ -132,84 +134,64 @@
       </div>
     </div>
 
-     <!-- Botão para visualizar mais projetos -->
-  <div class="view-more-container">
-    <a href="projetos.html" class="view-more-btn">Ver Todos os Projetos</a>
-  </div>
-  </section>  
+    <div class="view-more-container">
+      <a href="/projetos/" class="view-more-btn">Ver Todos os Projetos</a>
+    </div>
+  </section>
 
-  <!-- Seção de Contato -->
   <section class="contato" id="contato">
     <div class="contato-left">
       <h2>Contacta-me!</h2>
       <div class="contact-info">
         <div class="contact-item">
           <img src="https://img.icons8.com/ios-filled/50/00ffcc/email.png" alt="Email Icon" class="contact-icon">
-          <span>contacto@pedrolourenco.pt</span>
+          <a href="mailto:contacto@pedrolourenco.pt" class="contact-link">contacto@pedrolourenco.pt</a>
         </div>
         <div class="contact-item">
           <img src="https://img.icons8.com/ios-filled/50/00ffcc/iphone.png" alt="Phone Icon" class="contact-icon">
-          <span>+351 926043609</span>
+          <a href="tel:+351926043609" class="contact-link">+351 926043609</a>
         </div>
         <div class="social-icons">
-          <a href="https://www.linkedin.com" target="_blank">
-            <img src="https://img.icons8.com/ios-filled/50/00ffcc/linkedin.png" alt="LinkedIn">
-          </a>
-          <a href="https://github.com/pedrolourencoo" target="_blank">
-            <img src="https://img.icons8.com/ios-filled/50/00ffcc/github.png" alt="GitHub">
-          </a>
-          <a href="https://discord.com/users/1234567890" target="_blank">
-            <img src="https://img.icons8.com/ios-filled/50/00ffcc/discord.png" alt="Discord">
-          </a>
-          <a href="https://www.instagram.com" target="_blank">
-            <img src="https://img.icons8.com/ios-filled/50/00ffcc/instagram-new.png" alt="Instagram">
-          </a>
-          <a href="https://www.facebook.com" target="_blank">
-            <img src="https://img.icons8.com/ios-filled/50/00ffcc/facebook.png" alt="Facebook">
-          </a>
+          <a href="https://pt.linkedin.com/in/pedrolourenco5" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/pedrolourencoo" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://discord.com/users/532902993436344351" target="_blank"><i class="fab fa-discord"></i></a>
+          <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
         </div>
         <div class="download-cv">
           <a href="assets/cv.pdf" download="CV_Pedro_Lourenço">
-            <button>Download CV</button>
+            <button><i class="fas fa-file-pdf"></i> Download CV</button>
           </a>
         </div>
       </div>
     </div>
-    
+
     <div class="contato-right">
       <h2>Formulário de Contato</h2>
       <form action="https://formsubmit.co/contacto@pedrolourenco.pt" method="POST">
+        <input type="hidden" name="_subject" value="Novo Contato pelo Portfólio!">
+        <input type="hidden" name="_next" value="https://pedrolourenco.pt/obrigado.html">
+        <input type="hidden" name="_captcha" value="false">
         <input type="text" id="nome" name="nome" placeholder="Nome" required>
         <input type="email" id="email" name="email" placeholder="Email" required>
         <textarea id="mensagem" name="mensagem" placeholder="Mensagem" rows="5" required></textarea>
-        <button type="submit">Enviar</button>
+        <button type="submit"><i class="fas fa-envelope"></i> Enviar</button>
       </form>
     </div>
-  </section>  
+  </section>
 
   <footer class="footer">
     <div class="footer-content">
       <p>&copy; 2025 Pedro Lourenço | Todos os direitos reservados.</p>
       <div class="social-icons">
-        <a href="https://pt.linkedin.com/in/pedrolourenco5" target="_blank">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/pedrolourencoo" target="_blank">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="https://discord.com/users/532902993436344351" target="_blank">
-          <i class="fab fa-discord"></i>
-        </a>
-        <a href="https://www.instagram.com" target="_blank">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.facebook.com" target="_blank">
-          <i class="fab fa-facebook"></i>
-        </a>
-
+        <a href="https://pt.linkedin.com/in/pedrolourenco5" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/pedrolourencoo" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://discord.com/users/532902993436344351" target="_blank"><i class="fab fa-discord"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
       </div>
     </div>
-  </footer>   
+  </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>

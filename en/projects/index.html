@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-pt">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Todos os Projetos | Pedro Lourenço</title>
-  <link rel="icon" href="../assets/images/icon.png" type="image/png" />
-  <link rel="stylesheet" href="../style.css" />
+  <title>All Projects | Pedro Lourenço</title>
+  <link rel="icon" href="../../assets/images/icon.png" type="image/png" />
+  <link rel="stylesheet" href="../../style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
@@ -14,7 +14,7 @@
   <!-- Menu -->
   <nav class="navbar">
     <div class="logo">
-      <a href="../">Pedro Lourenço</a>
+      <a href="../../">Pedro Lourenço</a>
     </div>
 
     <div class="menu-icon" onclick="toggleMenu()">
@@ -24,29 +24,29 @@
     </div>
 
     <ul class="menu">
-      <li><a href="/">Início</a></li> <!-- Página inicial -->
-      <li><a href="/#sobre">Sobre Mim</a></li> <!-- Link para a seção 'sobre' da página inicial -->
-      <li><a href="/projetos/">Projetos</a></li> <!-- Link para a página de projetos em português -->
-      <li><a href="/#contato">Contato</a></li> <!-- Link para a seção 'contato' da página inicial -->    
+      <li><a href="/en/">Home</a></li> <!-- Página inicial, versão em inglês -->
+      <li><a href="/en/#about">About Me</a></li> <!-- Link para a seção 'about' da página inicial, versão em inglês -->
+      <li><a href="">Projects</a></li> <!-- Link para os projetos em inglês -->
+      <li><a href="/en/#contact">Contact</a></li> <!-- Link para a seção 'contact' da página inicial, versão em inglês -->    
       <li class="lang-selector">
         <div class="current-lang" onclick="toggleDropdown()">
-          <img id="current-flag" src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg" alt="Current Language" style="width: 25px; cursor: pointer;" />
+          <img id="current-flag" src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="Current Language" style="width: 25px; cursor: pointer;" />
         </div>
         <div id="lang-dropdown" class="lang-dropdown">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg" alt="Portuguese" onclick="window.location.href=''" />
-          <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="English" onclick="window.location.href='/en/projects'" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg" alt="Portuguese" onclick="window.location.href='/projetos/'" /> <!-- Redireciona para os projetos em português -->
+          <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="English" onclick="window.location.href=''" /> <!-- Redireciona para os projetos em inglês -->
         </div>
-      </li>      
-    </ul>
+      </li>
+    </ul>    
   </nav>
 
   <section class="projetos" id="todos-projetos">
-    <h2>Projetos</h2>
+    <h2>Projects</h2>
     <div class="grid">
-      <div class="projeto-card" style="background-image: url('../assets/images/mockup1.png');">
+      <div class="projeto-card" style="background-image: url('../../assets/images/mockup1.png');">
         <div class="projeto-info">
-          <h3>Portfolio Pessoal</h3>
-          <p>Este portfólio foi desenvolvido utilizando HTML, CSS e JavaScript, com animações modernas e design responsivo.</p>
+          <h3>Personal Portfolio</h3>
+          <p>This portfolio was developed using HTML, CSS, and JavaScript, featuring modern animations and responsive design.</p>
         </div>
       </div>
     </div>
@@ -54,7 +54,7 @@
 
   <footer class="footer">
     <div class="footer-content">
-      <p>&copy; 2025 Pedro Lourenço | Todos os direitos reservados.</p>
+      <p>&copy; 2025 Pedro Lourenço | All rights reserved.</p>
       <div class="social-icons">
         <a href="https://pt.linkedin.com/in/pedrolourenco5" target="_blank">
           <i class="fab fa-linkedin"></i>
@@ -75,6 +75,6 @@
     </div>
   </footer>
 
-  <script src="../script.js"></script>
+  <script src="../../script.js"></script>
 </body>
 </html>

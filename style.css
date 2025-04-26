@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Outfit', sans-serif;
   background: #202020;
@@ -41,6 +46,21 @@ footer {
   text-decoration: none;
 }
 
+/* Ícone do menu (hamburger) */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-icon .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #f5f5f5;
+  border-radius: 3px;
+}
+
 /* Menu */
 .navbar .menu {
   list-style: none;
@@ -61,22 +81,7 @@ footer {
   color: #00ffcc;
 }
 
-/* Ícone do menu (hamburger) */
-.menu-icon {
-  display: none;
-  cursor: pointer;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.menu-icon .bar {
-  width: 25px;
-  height: 3px;
-  background-color: #f5f5f5;
-  border-radius: 3px;
-}
-
-/* Exibe o menu no mobile */
+/* Menu no mobile */
 @media (max-width: 768px) {
   .menu-icon {
     display: flex;  /* Exibe o ícone no mobile */
@@ -86,24 +91,36 @@ footer {
   .navbar .menu {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #111;
+    right: -100%;  /* O menu começa fora da tela pela direita */
+    width: 80%;
     height: 100vh;
+    background-color: #111;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
+    transition: right 0.3s ease-in-out;  /* Animação suave de transição */
   }
 
   .navbar .menu.open {
-    transform: translateX(0);  /* Exibe o menu */
+    right: 0;  /* Menu desliza para a direita */
   }
 
   .navbar .menu li a {
     font-size: 1.5rem;
+  }
+
+  .navbar .menu li a:hover {
+    color: #00ffcc;
+  }
+
+  .close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: #f5f5f5;
+    cursor: pointer;
   }
 }
 
@@ -141,6 +158,7 @@ section {
 
 .sobre h2 {
   font-size: 3rem;
+  color: #00ffcc;
 }
 
 .sobre p {
@@ -312,7 +330,6 @@ section {
   margin-right: 150px;
 }
 
-/* Contêiner para alinhar as seções */
 .contato-left,
 .contato-right {
   width: 48%;
@@ -324,7 +341,34 @@ section {
   color: #00ffcc;
   margin-bottom: 1.5rem;
   text-align: left;
-  font-weight: 700;
+}
+
+/* Ajustes para tela pequena (mobile) */
+@media (max-width: 768px) {
+  .contato {
+    flex-direction: column; /* Empilha as colunas */
+    padding: 2rem; /* Reduz o padding para telas pequenas */
+  }
+
+  .contato-left,
+  .contato-right {
+    width: 100%; /* Cada seção ocupa 100% da largura */
+    margin-bottom: 2rem; /* Espaço entre as seções */
+  }
+
+  .contato h2 {
+    font-size: 2rem; /* Tamanho de fonte ajustado para mobile */
+  }
+
+  input, textarea {
+    width: 100%; /* Garante que os campos de input e textarea ocupem toda a largura disponível */
+    margin-bottom: 1rem; /* Espaçamento entre os campos */
+  }
+
+  button {
+    width: 100%; /* Botão ocupa toda a largura disponível */
+    padding: 1rem 0;
+  }
 }
 
 /* Estilo para os itens de contato */
@@ -345,11 +389,27 @@ section {
   height: 30px;
 }
 
+/* Estilo para os links de contato (e-mail e telefone) */
+.contact-link {
+  color: #00bcd4;  /* Azul clarinho por padrão */
+  text-decoration: none;  /* Remove o sublinhado */
+  font-size: 1.2rem;  /* Aumenta o tamanho da fonte */
+  font-weight: 500;  /* Deixa o texto um pouco mais grosso */
+}
+
+/* Quando o link for clicado ou ao passar o mouse, ficará com outra cor e sublinhado */
+.contact-link:focus,
+.contact-link:hover {
+  color: #007bff;  /* Cor azul mais intensa ao passar o mouse ou clicar */
+  text-decoration: underline;  /* Sublinhado quando o link for clicado ou ao passar o mouse */
+}
+
+
 /* Estilo para os ícones de redes sociais */
 .social-icons {
   display: flex;
   gap: 1.5rem;
-  margin-top: 2rem;
+  margin-left: 5px;
 }
 
 .social-icons a {
@@ -361,12 +421,11 @@ section {
   height: 40px;
 }
 
-.download-cv {
-  margin-top: 2rem;
-}
-
+/* Ajuste no botão de download para alinhamento */
 .download-cv button {
-  padding: 1rem 2rem;
+  font-family: 'Outfit', sans-serif;
+  padding: 0.8rem 1.5rem;  /* Ajuste no padding para reduzir o tamanho */
+  margin-left: 5px;
   background-color: #00ffcc;
   color: #111;
   border: none;
@@ -374,6 +433,18 @@ section {
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: 1.2rem;
+  display: flex;
+  align-items: center;  /* Alinha o ícone e o texto verticalmente */
+  gap: 10px;  /* Espaçamento entre o ícone e o texto */
+  height: 50px;  /* Defina a mesma altura que o botão de enviar */
+}
+
+.download-cv a {
+  text-decoration: none; /* Remove o sublinhado do link */
+}
+
+.download-cv button i {
+  font-size: 1.5rem;  /* Tamanho do ícone */
 }
 
 .download-cv button:hover {
@@ -385,6 +456,15 @@ section {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+/* Ajuste para os botões ficarem no mesmo nível */
+.contato-right button,
+.download-cv button {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Garante que o conteúdo fique centralizado */
+  height: 50px; /* Garante a mesma altura de ambos os botões */
 }
 
 .contato-right input,
@@ -402,19 +482,28 @@ section {
 }
 
 .contato-right button {
-  padding: 1rem;
-  background-color: #00ffcc;
-  color: #111;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-size: 1.2rem;
+  padding: 1rem 2rem; /* Ajusta o espaçamento interno para o botão */
+  font-family: 'Outfit', sans-serif;
+  background-color: #00ffcc; /* Cor de fundo */
+  color: #111; /* Cor do texto */
+  border: none; /* Remove a borda padrão */
+  border-radius: 5px; /* Borda arredondada */
+  cursor: pointer; /* Cursor de pointer ao passar o mouse */
+  transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+  font-size: 1.2rem; /* Tamanho da fonte */
+  display: inline-flex; /* Alinha o ícone e o texto horizontalmente */
+  align-items: center; /* Centraliza o ícone e o texto */
 }
 
 .contato-right button:hover {
-  background-color: #00cc99;
+  background-color: #00cc99; /* Cor de fundo ao passar o mouse */
 }
+
+/* Estilo para o ícone dentro do botão */
+.contato-right button i {
+  margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+}
+
 
 /* Ajustando os títulos para ficarem no mesmo nível */
 .contato-header {
@@ -457,6 +546,7 @@ section {
   display: flex;
   gap: 15px; /* Espaço entre os ícones */
   margin-bottom: 30px;
+  margin-top: 20px;
 }
 
 .social-icons a {
@@ -531,12 +621,12 @@ section {
 }
 
 .tab-link:hover {
-  color: #007BFF;
+  color: #00ffcc;
 }
 
 .tab-link.ativo {
-  color: #007BFF;
-  border-bottom: 2px solid #007BFF;
+  color: #00ffcc;
+  border-bottom: 2px solid #00ffcc;
 }
 
 .conteudo-tabs {
@@ -564,22 +654,179 @@ section {
   margin: 5px 0;
 }
 
+/* Estilos para telas menores (max-width: 768px) */
 @media (max-width: 768px) {
+  /* Ajustes para as seções gerais */
   .projetos, .contato {
-      margin-left: 20px;
-      margin-right: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
   .hero {
-      margin-left: 20px;
-      text-align: left;
+    margin-left: 20px;
+    text-align: left;
   }
 
+  .title {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+
+  /* Ajustes na Navbar */
   .navbar .menu {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .navbar .menu li {
-      margin-bottom: 1rem;
+    margin-bottom: 1rem;
   }
+
+  /* Ajustes na seção "Sobre" */
+  .sobre-container {
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .sobre-conteudo {
+    order: 1;
+  }
+
+  .sobre-img {
+    display: none;
+  }
+
+  .sobre-conteudo h2,
+  .sobre-conteudo p {
+    text-align: center;
+  }
+
+  /* Estilos específicos para a seção de projetos com scroll horizontal */
+  .grid {
+    display: flex; /* Flexbox no mobile */
+    gap: 1rem;
+    overflow-x: auto; /* Scroll horizontal */
+    padding-bottom: 1rem; /* Espaço para o scroll */
+    scroll-snap-type: x mandatory; /* Snap para o scroll horizontal */
+  }
+
+  .projeto-card {
+    min-width: 250px;  /* Tamanho mínimo para cada card */
+    flex: 0 0 auto;    /* Impede que os cards se expandam ou encolham */
+    scroll-snap-align: start; /* Garante alinhamento ao iniciar o scroll */
+    width: 250px;  /* Tamanho fixo para os cards */
+  }
+}
+
+/* Estilos para o seletor de idioma */
+.lang-selector {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Dropdown de idiomas */
+.lang-dropdown {
+  display: none;
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background-color: #3a3a3a;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+}
+
+.lang-dropdown div {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.lang-dropdown div:hover {
+  background-color: #555;
+}
+
+.lang-dropdown img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.lang-dropdown span {
+  font-size: 14px;
+}
+
+/* Estilo do seletor de idioma */
+.current-lang img {
+  width: 25px;
+  cursor: pointer;
+}
+
+.current-lang span {
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+/* Exibe apenas a bandeira no desktop e esconde o texto e a seta */
+@media (min-width: 769px) {
+  .lang-selector {
+    display: inline-block;
+  }
+
+  /* Exibe apenas a bandeira no desktop */
+  .current-lang {
+    display: flex;
+    align-items: center;
+  }
+
+  .current-lang img {
+    width: 25px;
+    cursor: pointer;
+  }
+
+  /* Esconde o texto e a seta no desktop */
+  .current-lang span,
+  .current-lang .arrow {
+    display: none;
+  }
+
+  /* Esconde o dropdown no desktop */
+  .lang-dropdown {
+    display: none;
+  }
+}
+
+/* Exibe o seletor de idiomas completo apenas em dispositivos móveis */
+@media (max-width: 768px) {
+  .lang-dropdown {
+    display: block;
+  }
+}
+
+/* Esconde o "X" por padrão */
+.close-menu {
+  display: none;
+}
+
+/* Exibe o "X" apenas quando o menu está aberto e em dispositivos móveis */
+@media (max-width: 768px) {
+  .navbar .menu.open .close-menu {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 768px) {
+  .projetos h2 {
+    font-size: 2.2rem; /* Menor tamanho no mobile para caber melhor */
+    white-space: nowrap; /* Impede quebra de linha */
+    text-align: center; /* Centraliza o título no mobile */
+  }
+
 }
