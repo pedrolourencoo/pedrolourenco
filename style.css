@@ -68,6 +68,18 @@ footer {
   gap: 2rem;
 }
 
+.navbar .menu li {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .menu li img {
+  vertical-align: middle;
+  max-width: 20px; /* Ajuste conforme necessário */
+  max-height: 20px; /* Ajuste conforme necessário */
+  margin-right: 8px;
+}
+
 .navbar .menu li a {
   font-size: 1rem;
   color: #f5f5f5;
@@ -75,10 +87,27 @@ footer {
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: color 0.3s ease;
+  cursor: pointer; /* Adiciona esta linha */
 }
 
 .navbar .menu li a:hover {
   color: #00ffcc;
+}
+
+.flag-wrapper {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;       /* espaço entre a bandeira e o texto */
+  align-items: center;     /* centra verticalmente a <img> */
+  justify-content: center; /* centra horizontalmente a <img> */
+}
+
+.flag-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;     /* mantém proporção sem distorcer */
+  display: block;
 }
 
 /* Menu no mobile */
@@ -701,20 +730,19 @@ section {
     text-align: center;
   }
 
-  /* Estilos específicos para a seção de projetos com scroll horizontal */
   .grid {
-    display: flex; /* Flexbox no mobile */
+    display: flex;
     gap: 1rem;
-    overflow-x: auto; /* Scroll horizontal */
-    padding-bottom: 1rem; /* Espaço para o scroll */
-    scroll-snap-type: x mandatory; /* Snap para o scroll horizontal */
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
   }
 
   .projeto-card {
-    min-width: 250px;  /* Tamanho mínimo para cada card */
-    flex: 0 0 auto;    /* Impede que os cards se expandam ou encolham */
-    scroll-snap-align: start; /* Garante alinhamento ao iniciar o scroll */
-    width: 250px;  /* Tamanho fixo para os cards */
+    width: 300px;         /* largura igual para todos */
+    height: 225px;        /* mantém proporção 4:3 com largura 300px */
+    flex: 0 0 auto;
+    scroll-snap-align: start;
   }
 }
 
@@ -725,7 +753,6 @@ section {
   cursor: pointer;
 }
 
-/* Dropdown de idiomas */
 .lang-dropdown {
   display: none;
   position: absolute;
@@ -734,8 +761,14 @@ section {
   background-color: #3a3a3a;
   border-radius: 5px;
   padding: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
   z-index: 100;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.lang-dropdown.show {
+  display: flex;
 }
 
 .lang-dropdown div {

@@ -14,7 +14,7 @@
   <!-- Menu -->
   <nav class="navbar">
     <div class="logo">
-      <a href="../">Pedro Lourenço</a>
+      <a href="/" style="cursor: pointer;">Pedro Lourenço</a>
     </div>
 
     <div class="menu-icon" onclick="toggleMenu()">
@@ -23,32 +23,64 @@
       <span class="bar"></span>
     </div>
 
-    <ul class="menu">
-      <li><a href="/">Início</a></li> <!-- Página inicial -->
-      <li><a href="/#sobre">Sobre Mim</a></li> <!-- Link para a seção 'sobre' da página inicial -->
-      <li><a href="/projetos/">Projetos</a></li> <!-- Link para a página de projetos em português -->
-      <li><a href="/#contato">Contato</a></li> <!-- Link para a seção 'contato' da página inicial -->    
+    <ul class="menu" id="menu">
+      <li><a class="menu-link" href="/"><i class="fas fa-home"></i> Início</a></li>
+  <li><a class="menu-link" href="/#sobre"><i class="fas fa-user"></i> Sobre Mim</a></li>
+  <li><a class="menu-link" href="/#projetos"><i class="fas fa-folder-open"></i> Projetos</a></li>
+  <li><a class="menu-link" href="/#contato"><i class="fas fa-envelope"></i> Contactos</a></li>
       <li class="lang-selector">
         <div class="current-lang" onclick="toggleDropdown()">
-          <img id="current-flag" src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg" alt="Current Language" style="width: 25px; cursor: pointer;" />
+          <img id="current-flag"
+               src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg"
+               alt="Current Language"
+               style="width:25px; cursor:pointer;" />
+          <span id="current-lang-text">Português</span>
+          <span class="arrow">&#9660;</span>
         </div>
         <div id="lang-dropdown" class="lang-dropdown">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg" alt="Portuguese" onclick="window.location.href=''" />
-          <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="English" onclick="window.location.href='/en/projects'" />
+          <div onclick="changeLanguage('pt')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg"
+                 alt="Português" style="width:20px; cursor:pointer;" />
+            <span>Português</span>
+          </div>
+          <div onclick="changeLanguage('en')">
+            <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg"
+                 alt="English" style="width:20px; cursor:pointer;" />
+            <span>English</span>
+          </div>
         </div>
-      </li>      
+      </li>
     </ul>
   </nav>
 
   <section class="projetos" id="todos-projetos">
     <h2>Projetos</h2>
     <div class="grid">
-      <div class="projeto-card" style="background-image: url('../assets/images/mockup1.png');">
-        <div class="projeto-info">
-          <h3>Portfolio Pessoal</h3>
-          <p>Este portfólio foi desenvolvido utilizando HTML, CSS e JavaScript, com animações modernas e design responsivo.</p>
+      <a href="https://github.com/pedrolourencoo/portfoliopedrolourenco" target="_blank"
+         style="text-decoration:none; color:inherit; cursor:pointer;">
+        <div class="projeto-card" style="background-image: url('../assets/images/mockup1.webp');">
+          <div class="projeto-info">
+            <h3>Portfolio Pessoal</h3>
+            <p>Este portfólio foi desenvolvido utilizando HTML, CSS e JavaScript, com animações modernas e design responsivo.</p>
+          </div>
         </div>
-      </div>
+      </a>
+      <a href="#" style="text-decoration:none; color:inherit; cursor:pointer;">
+        <div class="projeto-card" style="background-image: url('../assets/images/desenvolvimento.png');">
+          <div class="projeto-info">
+            <h3>Projeto 2</h3>
+            <p>Descrição breve do projeto 2. Ele é focado em design e experiência do usuário.</p>
+          </div>
+        </div>
+      </a>
+      <a href="#" style="text-decoration:none; color:inherit; cursor:pointer;">
+        <div class="projeto-card" style="background-image: url('../assets/images/desenvolvimento.png');">
+          <div class="projeto-info">
+            <h3>Projeto 3</h3>
+            <p>Descrição breve do projeto 3. Uma solução inovadora para um problema real do mercado.</p>
+          </div>
+        </div>
+      </a>
     </div>
   </section>
 
@@ -56,25 +88,19 @@
     <div class="footer-content">
       <p>&copy; 2025 Pedro Lourenço | Todos os direitos reservados.</p>
       <div class="social-icons">
-        <a href="https://pt.linkedin.com/in/pedrolourenco5" target="_blank">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/pedrolourencoo" target="_blank">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="https://discord.com/users/532902993436344351" target="_blank">
-          <i class="fab fa-discord"></i>
-        </a>
-        <a href="https://www.instagram.com" target="_blank">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.facebook.com" target="_blank">
-          <i class="fab fa-facebook"></i>
-        </a>
+        <a href="https://pt.linkedin.com/in/pedrolourenco5" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/pedrolourencoo"      target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://discord.com/users/532902993436344351" target="_blank"><i class="fab fa-discord"></i></a>
+        <a href="https://www.instagram.com"               target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com"                target="_blank"><i class="fab fa-facebook"></i></a>
       </div>
     </div>
   </footer>
 
+  <!-- GSAP (necessário para evitar erros em script.js) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- O teu código -->
   <script src="../script.js"></script>
 </body>
 </html>

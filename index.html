@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -38,7 +38,7 @@
   <!-- Menu -->
   <nav class="navbar">
     <div class="logo">
-      <a href="/">Pedro Lourenço</a>
+      <a class="menu-link" data-target="" style="cursor: pointer;">Pedro Lourenço</a>
     </div>
 
     <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">
@@ -48,10 +48,10 @@
     </div>    
 
     <ul class="menu" id="menu">
-      <li><a href="/"><i class="fas fa-home"></i> Início</a></li>
-      <li><a href="#sobre"><i class="fas fa-user"></i> Sobre Mim</a></li>
-      <li><a href="projetos/"><i class="fas fa-project-diagram"></i> Projetos</a></li>
-      <li><a href="#contato"><i class="fas fa-envelope"></i> Contactos</a></li>
+      <li><a class="menu-link" data-target=""><i class="fas fa-home"></i> Início</a></li>
+      <li><a class="menu-link" data-target="sobre"><i class="fas fa-user"></i> Sobre Mim</a></li>
+      <li><a href="projetos/"><i class="fas fa-folder-open"></i> Projetos</a></li>
+      <li><a class="menu-link" data-target="contato"><i class="fas fa-envelope"></i> Contactos</a></li>      
       <li class="lang-selector">
         <div class="current-lang" onclick="toggleDropdown()">
           <img id="current-flag" src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg" alt="Current Language" style="width: 25px; cursor: pointer;" />
@@ -60,11 +60,15 @@
         </div>
         <div id="lang-dropdown" class="lang-dropdown">
           <div onclick="changeLanguage('pt')">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg" alt="Portuguese" />
+            <span class="flag-wrapper">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg" alt="Português">
+            </span>
             <span>Português</span>
           </div>
           <div onclick="changeLanguage('en')">
-            <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="English" />
+            <span class="flag-wrapper">
+              <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="English">
+            </span>
             <span>English</span>
           </div>
         </div>
@@ -74,8 +78,8 @@
 
   <!-- Seções do Portfólio -->
   <header class="hero" id="home">
-    <h1 class="title">Olá, eu sou o <span>Pedro Lourenço</span></h1>
-    <p class="subtitle">Desenvolvedor Web</p>
+    <h1 class="title">Olá! Eu sou o <span>Pedro Lourenço</span></h1>
+    <p class="subtitle">Estudante de Cibersegurança e Programador</p>
   </header>
 
   <section class="sobre" id="sobre">
@@ -97,14 +101,54 @@
         <div class="conteudo-tabs">
           <div id="skills" class="conteudo-tab ativo">
             <div class="skills-container">
-              <div class="skill-item html"><i class="fab fa-html5"></i><span>HTML</span></div>
-              <div class="skill-item css"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
-              <div class="skill-item js"><i class="fab fa-js-square"></i><span>JavaScript</span></div>
-              <div class="skill-item cpp"><i class="devicon-cplusplus-plain"></i><span>C++</span></div>
-              <div class="skill-item c"><i class="devicon-c-plain"></i><span>C</span></div>
-              <div class="skill-item python"><i class="devicon-python-plain"></i><span>Python</span></div>
+        
+              <!-- Linguagens de Programação -->
+              <div class="skill-item html"><i class="devicon-html5-plain colored"></i><span>HTML</span></div>
+              <div class="skill-item css"><i class="devicon-css3-plain colored"></i><span>CSS</span></div>
+              <div class="skill-item js"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+              <div class="skill-item c"><i class="devicon-c-plain colored"></i><span>C</span></div>
+              <div class="skill-item cpp"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></div>
+              <div class="skill-item python"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+              <div class="skill-item vb">
+                <img src="assets/icons/visualbasic.png" alt="Visual Basic" style="width:32px; height:32px; margin-right: 8px;" />
+                <span>Visual Basic</span>
+              </div>
+        
+              <!-- Ferramentas de Desenvolvimento -->
+              <div class="skill-item github"><i class="devicon-github-original colored"></i><span>GitHub</span></div>
+              <div class="skill-item vscode"><i class="devicon-vscode-plain colored"></i><span>VS Code</span></div>
+              <div class="skill-item android-studio">
+                <img src="assets/icons/androidstudio.svg" alt="Android Studio" style="width:32px; height:32px; margin-right: 8px;" />
+                <span>Android Studio</span>
+              </div>
+        
+              <!-- Outras Ferramentas -->
+              <div class="skill-item office">
+                <img src="assets/icons/office.png" alt="Microsoft Office" style="width:32px; height:32px; margin-right: 8px;" />
+                <span>MS Office</span>
+              </div>
+              <div class="skill-item wireshark">
+                <img src="assets/icons/wireshark.png" alt="Wireshark" style="width:32px; height:32px; margin-right: 8px;" />
+                <span>Wireshark</span>
+              </div>
+        
+              <!-- AI e Design -->
+              <div class="skill-item chatgpt">
+                <img src="assets/icons/chatgpt.png" alt="ChatGPT" style="width:32px; height:32px; margin-right: 8px;" />
+                <span>ChatGPT</span>
+              </div>
+              <div class="skill-item deepseek">
+                <img src="assets/icons/deepseek.svg" alt="DeepSeek" style="width:32px; height:32px; margin-right: 8px;" />
+                <span>DeepSeek</span>
+              </div>
+              <div class="skill-item canva">
+                <img src="assets/icons/canva.png" alt="Canva" style="width:32px; height:32px; margin-right: 8px;" />
+                <span>Canva</span>
+              </div>
             </div>
           </div>
+        </div>        
+        
 
           <div id="educacao" class="conteudo-tab">
             <p><strong>2020 - 2023</strong><br>Técnico de Gestão e Programação de Sistemas Informáticos na Escola Secundária de Vendas Novas</p>
@@ -124,19 +168,21 @@
   <section class="projetos" id="projetos">
     <h2>Os Meus Projetos</h2>
     <div class="grid">
-      <div class="projeto-card" style="background-image: url('assets/images/mockup1.png');">
-        <div class="projeto-info">
-          <h3>Portfolio Pessoal</h3>
-          <p>Este portfólio foi desenvolvido utilizando HTML, CSS e JavaScript, com animações modernas e design responsivo.</p>
+      <a href="https://github.com/pedrolourencoo/portfoliopedrolourenco" target="_blank" style="text-decoration: none; color: inherit;">
+        <div class="projeto-card" style="background-image: url('assets/images/mockup1.webp');">
+          <div class="projeto-info">
+            <h3>Portfolio Pessoal</h3>
+            <p>Este portfólio foi desenvolvido utilizando HTML, CSS e JavaScript, com animações modernas e design responsivo.</p>
+          </div>
         </div>
-      </div>
-      <div class="projeto-card" style="background-image: url('https://www.gov.br/agricultura/pt-br/assuntos/riscos-seguro/imagens/em_construao.png/@@images/image.png');">
+      </a>      
+      <div class="projeto-card" style="background-image: url('assets/images/desenvolvimento.png');">
         <div class="projeto-info">
           <h3>Projeto 2</h3>
           <p>Descrição breve do projeto 2. Ele é focado em design e experiência do usuário.</p>
         </div>
       </div>
-      <div class="projeto-card" style="background-image: url('https://www.gov.br/agricultura/pt-br/assuntos/riscos-seguro/imagens/em_construao.png/@@images/image.png');">
+      <div class="projeto-card" style="background-image: url('assets/images/desenvolvimento.png');">  
         <div class="projeto-info">
           <h3>Projeto 3</h3>
           <p>Descrição breve do projeto 3. Uma solução inovadora para um problema real do mercado.</p>
@@ -206,6 +252,30 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const tabLinks = document.querySelectorAll('.tab-link');
+      const tabContents = document.querySelectorAll('.tab-content');
+  
+      tabLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          const target = link.getAttribute('data-tab');
+  
+          tabLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+  
+          tabContents.forEach(content => {
+            content.classList.remove('active');
+            if (content.id === target) {
+              content.classList.add('active');
+            }
+          });
+        });
+      });
+    });
+  </script>
+  
+  
 
 </body>
 </html>
